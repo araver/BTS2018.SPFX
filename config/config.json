@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "pnp-samples-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pnpSamples/PnpSamplesWebPart.js",
+          "manifest": "./src/webparts/pnpSamples/PnpSamplesWebPart.manifest.json"
+        }
+      ]
+    },
+    "graph-sample-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/graphSample/GraphSampleWebPart.js",
+          "manifest": "./src/webparts/graphSample/GraphSampleWebPart.manifest.json"
+        }
+      ]
+    },
+    "announcements-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/announcements/AnnouncementsApplicationCustomizer.js",
+          "manifest": "./src/extensions/announcements/AnnouncementsApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PnpSamplesWebPartStrings": "lib/webparts/pnpSamples/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
+    "GraphSampleWebPartStrings": "lib/webparts/graphSample/loc/{locale}.js",
+    "AnnouncementsApplicationCustomizerStrings": "lib/extensions/announcements/loc/{locale}.js"
+  }
+}
