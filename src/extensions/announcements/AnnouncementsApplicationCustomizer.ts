@@ -8,7 +8,7 @@ import { Dialog } from '@microsoft/sp-dialog';
 import * as strings from 'AnnouncementsApplicationCustomizerStrings';
 import styles from "./AnnouncementsApplicationCustomizer.module.scss";
 const LOG_SOURCE: string = 'AnnouncementsApplicationCustomizer';
-import { sp, Web } from "@pnp/sp";
+import { sp, Web, toAbsoluteUrl, Site } from "@pnp/sp";
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
@@ -53,7 +53,8 @@ export default class AnnouncementsApplicationCustomizer
   }
 
   private async getAnnouncement(){
-    var web = new Web("/sites/apps/");
+    
+    var web = new Web("https://m365x680238.sharepoint.com/sites/apps");
     var announcments = await web.lists.getByTitle("Announcements").items.orderBy("Modified", false).top(1).get();
 
     return announcments[0];
